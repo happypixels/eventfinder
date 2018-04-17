@@ -18,7 +18,8 @@ mix
   .postCss("resources/assets/css/main.css", "public/css", [
     tailwindcss("./tailwind.js")
   ])
-  .purgeCss();
+  .purgeCss()
+  .extract(['vue', 'axios', 'lodash']);
 
 if (mix.inProduction()) {
   mix.version();
