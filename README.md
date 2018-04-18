@@ -1,3 +1,5 @@
+[![StyleCI](https://styleci.io/repos/128091506/shield?branch=master)](https://styleci.io/repos/128091506)
+
 # eventfinder
 Get your tickets to any concert, sports game or cultural event near you before they run out
 
