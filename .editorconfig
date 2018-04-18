@@ -1,11 +1,25 @@
-# PHP PSR-2: http://www.php-fig.org/psr/psr-2/
-
 root = true
 
-[*.php]
+# PSR-2 for .php files: http://www.php-fig.org/psr/psr-2/
+[*]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
-trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
+trim_trailing_whitespace = true
+
+[*.{js,vue,css}]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.yml]
+indent_style = space
+indent_size = 2
