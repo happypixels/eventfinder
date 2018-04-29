@@ -20,6 +20,6 @@ $factory->define(App\Models\Agent::class, function (Faker $faker) {
         'track_url'          => 'default-track-url',
         'logotype'           => null,
         'is_trusted'         => mt_rand(0, 1),
-        'is_enabled'         => 1
+        'is_enabled'         => 1,
     ];
 });
