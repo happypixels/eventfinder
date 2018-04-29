@@ -1,8 +1,8 @@
 <?php
 
-use Faker\Generator as Faker;
-use App\Models\Venue;
 use App\Models\Agent;
+use App\Models\Venue;
+use Faker\Generator as Faker;
 
 /*
 |--------------------------------------------------------------------------

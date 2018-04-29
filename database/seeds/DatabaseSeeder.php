@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Agent;
-use App\Models\Venue;
 use App\Models\Event;
+use App\Models\Venue;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
