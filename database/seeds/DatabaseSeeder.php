@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Agent;
+use App\Models\Venue;
+use App\Models\Event;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        factory(Agent::class, 20)->create();
+        factory(Venue::class, 20)->create();
+        factory(Event::class, 20)->create();
     }
 }

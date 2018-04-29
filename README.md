@@ -11,6 +11,9 @@ We have a very ambitious goal to make this service available in several countrie
 Additionally, we'd like to make this project as well maintained and functional as possible. Hopefully, the open source community can help with that.
 
 ## Tech stack
-* Laravel ([https://laravel.com](Laravel))
-* VueJS ([https://vuejs.org](VueJS))
-* TailwindCSS ([https://tailwindcss.com](TailwindCSS))
+* Laravel ([https://vuejs.org](https://laravel.com))
+* VueJS ([https://vuejs.org](https://vuejs.org))
+* TailwindCSS ([https://tailwindcss.com](https://tailwindcss.com))
+
+## Contributing
+Before you start, make sure you read the docs on [contributing](docs/contributing.md).
