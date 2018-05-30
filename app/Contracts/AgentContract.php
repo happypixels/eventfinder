@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface Agent
+interface AgentContract
 {
     /**
      * Retrieves the events from the server and parse them into a single leveled array.

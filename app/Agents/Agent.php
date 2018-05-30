@@ -3,8 +3,9 @@
 namespace App\Agents;
 
 use ReflectionClass;
+use App\Contracts\AgentContract;
 
-class BaseAgent
+class Agent implements AgentContract
 {
     /**
      * The name of the agent.
@@ -78,17 +79,6 @@ class BaseAgent
     }
 
     /**
-     * Cleans up after each sync if necessary. Sometimes we have to store temp files while parsing the
-     * data, this method cleans it all up afterwards.
-     *
-     * @return void
-     */
-    public function cleanup() : void
-    {
-        //
-    }
-
-    /**
      * Returns the selected configuration value for the agent.
      *
      * @param string $key
@@ -109,5 +99,53 @@ class BaseAgent
     public function buildEventFilename($eventName, $url)
     {
         return str_slug($eventName) . '.' . pathinfo($url, PATHINFO_EXTENSION);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function gatherEvents() : array
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function mapEvent($event) : array
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function mapVenue($event) : array
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function mapPrices($event): array
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function downloadAndMapImage($event): array
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function cleanup() : void
+    {
+        //
     }
 }

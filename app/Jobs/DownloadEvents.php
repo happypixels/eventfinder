@@ -8,10 +8,10 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use App\Models\Event;
-use App\Contracts\Agent;
+use App\Contracts\AgentContract;
 use App\Models\Venue;
 
-class StoreEvents implements ShouldQueue
+class DownloadEvents implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -22,7 +22,7 @@ class StoreEvents implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(Agent $agent)
+    public function __construct(AgentContract $agent)
     {
         $this->agent = $agent;
     }

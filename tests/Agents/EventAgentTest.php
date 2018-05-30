@@ -13,12 +13,12 @@ class EventAgentTest extends TestCase
     /** @test */
     public function the_agent_is_available_on_the_event()
     {
-        $event = factory(Event::class)->create(['agent_class' => 'App\Agents\BaseAgent']);
+        $event = factory(Event::class)->create(['agent_class' => 'App\Agents\Agent']);
 
         $this->assertNotNull($event->agent);
-        $this->assertEquals('BaseAgent', $event->agent->name);
+        $this->assertEquals('Agent', $event->agent->name);
         $this->assertEquals('', $event->agent->website);
-        $this->assertEquals('baseagent', $event->agent->identifier);
+        $this->assertEquals('agent', $event->agent->identifier);
         $this->assertEquals('', $event->agent->trackback());
     }
 }

@@ -19,7 +19,7 @@ $factory->define(App\Models\Event::class, function (Faker $faker) {
         'venue_id'              => function () {
             return factory(Venue::class)->create()->id;
         },
-        'agent_class'                        => 'App\Agents\BaseAgent',
+        'agent_class'                        => 'App\Agents\Agent',
         'agent_event_id'                     => uniqid(),
         'title'                              => $faker->sentence,
         'description'                        => $faker->paragraph,

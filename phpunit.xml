@@ -17,6 +17,11 @@
         <testsuite name="Integration">
             <directory suffix="Integration.php">./tests</directory>
         </testsuite>
+
+        <testsuite name="All">
+            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Integration.php">./tests</directory>
+        </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

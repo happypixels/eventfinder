@@ -2,14 +2,13 @@
 
 namespace App\Agents;
 
-use App\Contracts\Agent;
 use GuzzleHttp\Client;
 use \File;
 use ZipArchive;
 use SimpleXMLElement;
 use Illuminate\Support\Facades\Storage;
 
-class Eventim extends BaseAgent implements Agent
+class Eventim extends Agent
 {
     /**
      * {@inheritdoc}

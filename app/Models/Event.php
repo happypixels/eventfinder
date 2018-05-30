@@ -32,7 +32,7 @@ class Event extends Model
     /**
      * Makes the agent available on the event object.
      *
-     * @return App\Contracts\Agent
+     * @return App\Contracts\AgentContract
      */
     public function getAgentAttribute()
     {
@@ -42,7 +42,7 @@ class Event extends Model
     /**
      * Returns an instance of the ticket agent for the event.
      *
-     * @return App\Contracts\Agent
+     * @return App\Contracts\AgentContract
      */
     public function agent()
     {
