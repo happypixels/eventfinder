@@ -15,7 +15,7 @@ class DownloadEvents implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $agent;
+    public $agent;
 
     /**
      * Create a new job instance.
