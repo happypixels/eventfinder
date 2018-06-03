@@ -15,9 +15,9 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('venue_id')->unsigned();
-            $table->integer('agent_id')->unsigned();
-            $table->string('agent_event_id');
+            $table->integer('venue_id')->unsigned()->nullable();
+            $table->string('agent_class')->nullable();
+            $table->string('agent_event_id')->nullable();
             $table->string('title');
             $table->longtext('description')->nullable();
             $table->string('url')->nullable();
@@ -34,9 +34,8 @@ class CreateEventsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique(['agent_id', 'agent_event_id']);
+            $table->unique(['agent_class', 'agent_event_id']);
             $table->foreign('venue_id')->references('id')->on('venues')->onDelete('cascade');
-            $table->foreign('agent_id')->references('id')->on('agents')->onDelete('cascade');
         });
     }
 
@@ -49,7 +48,6 @@ class CreateEventsTable extends Migration
     {
         Schema::table('events', function ($table) {
             $table->dropForeign('events_venue_id_foreign');
-            $table->dropForeign('events_agent_id_foreign');
         });
 
         Schema::dropIfExists('events');

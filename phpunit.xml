@@ -7,14 +7,20 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false">
+         stopOnFailure="false"
+         defaultTestSuite="Default">
     <testsuites>
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+        <testsuite name="Default">
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
 
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+        <testsuite name="Integration">
+            <directory suffix="Integration.php">./tests</directory>
+        </testsuite>
+
+        <testsuite name="All">
+            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Integration.php">./tests</directory>
         </testsuite>
     </testsuites>
     <filter>

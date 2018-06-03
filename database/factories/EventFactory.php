@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Agent;
 use App\Models\Venue;
 use Faker\Generator as Faker;
 
@@ -20,21 +19,19 @@ $factory->define(App\Models\Event::class, function (Faker $faker) {
         'venue_id'              => function () {
             return factory(Venue::class)->create()->id;
         },
-        'agent_id'              => function () {
-            return factory(Agent::class)->create()->id;
-        },
-        'agent_event_id'               => uniqid(),
-        'title'                        => $faker->sentence,
-        'description'                  => $faker->paragraph,
-        'url'                          => $faker->url,
-        'image'                        => null,
-        'image_url'                    => null,
-        'min_price'                    => $faker->randomFloat(3, 10, 1000),
-        'max_price'                    => $faker->randomFloat(3, 10, 1000),
-        'is_cancelled'                 => 0,
-        'is_sold_out'                  => 0,
-        'event_starts_at'              => $faker->dateTime,
-        'sale_starts_at'               => $faker->dateTime,
-        'sale_ends_at'                 => $faker->dateTime,
+        'agent_class'                        => 'App\Agents\Agent',
+        'agent_event_id'                     => uniqid(),
+        'title'                              => $faker->sentence,
+        'description'                        => $faker->paragraph,
+        'url'                                => $faker->url,
+        'image'                              => null,
+        'image_url'                          => null,
+        'min_price'                          => $faker->randomFloat(3, 10, 1000),
+        'max_price'                          => $faker->randomFloat(3, 10, 1000),
+        'is_cancelled'                       => 0,
+        'is_sold_out'                        => 0,
+        'event_starts_at'                    => $faker->dateTime,
+        'sale_starts_at'                     => $faker->dateTime,
+        'sale_ends_at'                       => $faker->dateTime,
     ];
 });
