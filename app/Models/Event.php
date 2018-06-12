@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Event extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Sluggable;
 
     protected $fillable = [
         'venue_id',
@@ -47,5 +48,19 @@ class Event extends Model
     public function agent()
     {
         return new $this->agent_class();
+    }
+
+    /**
+    * Return the sluggable configuration array for this model.
+    *
+    * @return array
+    */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+            ]
+        ];
     }
 }

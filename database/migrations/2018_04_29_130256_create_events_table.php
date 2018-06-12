@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('agent_class')->nullable();
             $table->string('agent_event_id')->nullable();
             $table->string('title');
+            $table->string('slug');
             $table->longtext('description')->nullable();
             $table->string('url')->nullable();
             $table->string('image')->nullable();
