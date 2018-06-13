@@ -18,4 +18,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/events', 'EventController')->only('show');
+Route::resource('/api/events', 'EventController')->only('show');
