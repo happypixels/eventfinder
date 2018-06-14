@@ -11,7 +11,7 @@ We have a very ambitious goal to make this service available in several countrie
 Additionally, we'd like to make this project as well maintained and functional as possible. Hopefully, the open source community can help with that.
 
 ## Tech stack
-* Laravel ([https://vuejs.org](https://laravel.com))
+* Laravel ([https://laravel.com](https://laravel.com))
 * VueJS ([https://vuejs.org](https://vuejs.org))
 * TailwindCSS ([https://tailwindcss.com](https://tailwindcss.com))
 
