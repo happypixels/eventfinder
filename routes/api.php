@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/events', 'Api\EventController')->only('show');
+Route::resource('/venue', 'Api\VenueController')->only('show');
