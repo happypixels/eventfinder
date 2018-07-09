@@ -62,4 +62,11 @@ class EventController extends Controller
     {
         //
     }
+
+    public function latest()
+    {
+        $events = Event::latest()->limit(10)->get();
+
+        return response()->json(['events' => $events], 200);
+    }
 }
