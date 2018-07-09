@@ -14,20 +14,20 @@ class GetLatestEventsTest extends TestCase
     /** @test */
     public function get_latest_events()
     {
-        $olderEvents = factory(Event::class, 15)->create(['created_at' => now()->subDays(15)]);
-        $latestEvents = factory(Event::class, 15)->create(['created_at' => now()->subDays(5)]);
+        $olderEvents = factory(Event::class, 10)->create(['created_at' => now()->subDays(15)]);
+        $latestEvents = factory(Event::class, 10)->create(['created_at' => now()->subDays(5)]);
 
         $response = $this->getJson('/api/events/latest')
             ->assertSuccessful()
             ->assertJsonFragment([
                 'slug' => $latestEvents[0]->slug,
-                'slug' => $latestEvents[9]->slug,
+                'slug' => $latestEvents[8]->slug,
             ])
             ->assertJsonMissing([
-                'slug' => $latestEvents[10]->slug,
+                'slug' => $latestEvents[9]->slug,
                 'slug' => $olderEvents[0]->slug,
             ]);
 
-        $this->assertEquals(10, count($response->getData()->events));
+        $this->assertEquals(9, count($response->getData()->events));
     }
 }
